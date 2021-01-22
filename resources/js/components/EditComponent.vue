@@ -36,6 +36,7 @@ export default {
     created() {
         let uri = `http://vuelaravelcrud.test/api/post/edit/${this.$route.params.id}`;
         this.axios.get(uri).then((response) => {
+            console.log(response);
             this.post = response.data;
         });
     },

@@ -12,6 +12,7 @@ import VueRouter from "vue-router";
 import VueAxios from 'vue-axios';
 import axios from 'axios';
 import {routes} from "./routes.js";
+import App from './App.vue';
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
@@ -40,7 +41,4 @@ const router = new VueRouter({
     routes
 });
 
-new Vue({
-    el: '#app',
-    router
-});
+const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
